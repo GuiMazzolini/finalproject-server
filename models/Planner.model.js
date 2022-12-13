@@ -4,7 +4,8 @@ const plannerSchema = new Schema(
   {
     user: { type: Schema.Types.ObjectId, ref: "User", required: false },
 
-    recipes: [{ type: Schema.Types.ObjectId, ref: "Recipes" }]
+    recipes: [{quantity: Number,
+              recipe: {type: Schema.Types.ObjectId, ref: "Recipes"} }]
   },
   {
     timestamps: true,

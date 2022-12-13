@@ -26,7 +26,9 @@ const recipesSchema = new Schema(
 
     prepare: [String],
 
-    imageUrl: String, 
+    imageUrl: String,
+
+    quantity: Number,
 
     user: { type: Schema.Types.ObjectId, ref: "User", required: true },
   },
