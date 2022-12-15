@@ -10,7 +10,7 @@ const Recipes = require("../models/Recipes.model")
 router.get("/planner", (req, res, next) => {
     Planner.find().populate("user", "recipes")
       .then(plannerFromDB => 
-        res.status(200).json(plannerFromDB))
+        {console.log(plannerFromDB);res.status(200).json(plannerFromDB)})
       .catch(err => next(err));
   });
   
@@ -29,6 +29,7 @@ router.get("/planner", (req, res, next) => {
   
   router.post('/planner', (req, res, next) => {
     const { user, recipes } = req.body
+    console.log(req.body.recipes)
     async function createPlanner() {
       try {
         const newPlanner = await Planner.create(req.body)

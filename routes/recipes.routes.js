@@ -38,7 +38,7 @@ router.post("/upload", fileUploader.single("imageUrl"), (req, res, next) => {
 
 router.post('/recipes', (req, res, next) => {
   const { user } = req.body
-  
+
   async function createRecipe() {
     try {
       const newRecipe = await Recipes.create(req.body)
