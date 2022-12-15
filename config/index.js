@@ -9,9 +9,8 @@ module.exports = (app) => {
   app.set("trust proxy", 1);
   app.use(
     cors({
-      credentials: true,
-      origin: [FRONTEND_URL]
-
+      origin: process.env.FRONTEND_URL,
+      credentials: true
     })
   );
   app.use(logger("dev"));
