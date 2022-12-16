@@ -9,7 +9,6 @@ module.exports = (app) => {
     cors({
       origin: "*",
       credentials: true
-
     })
   );
   app.use(logger("dev"));
