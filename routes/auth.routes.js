@@ -74,9 +74,6 @@ router.post("/login", (req, res, next) => {
           algorithm: "HS256",
           expiresIn: "6h",
         });
-        res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-        res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
         res.status(200).json({ authToken: authToken });
       } else {
         res.status(401).json({ message: "Unable to authenticate the user" });

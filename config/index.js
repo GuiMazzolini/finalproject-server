@@ -7,9 +7,10 @@ module.exports = (app) => {
   app.set("trust proxy", 1);
   app.use(
     cors({
-      origin: "*",
-      credentials: true
-    })
+  origin: "https://sparkly-dragon-e7e0df.netlify.app",
+  methods: ["GET", "POST", "PUT", "DELETE"]
+
+})
   );
   app.use(logger("dev"));
   app.use(express.json());
