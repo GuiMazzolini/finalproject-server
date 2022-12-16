@@ -9,7 +9,8 @@ module.exports = (app) => {
     cors({
       origin: "https://sparkly-dragon-e7e0df.netlify.app",
       methods: ["GET", "PUT", "POST", "DELETE"],
-      credentials: true
+      credentials: true,
+      "Access-Control-Allow-Origin": "*"
     })
   );
   app.use(logger("dev"));
